@@ -1,0 +1,26 @@
+<p>
+  demo04-dir works!
+</p>
+<ul>
+  <ng-container *ngFor="let item of stulist">
+  <li *ngIf="item.score>=80">{{item.name}}</li>
+  </ng-container>
+</ul>
+
+<!-- 需求:myscore做一个评分90分以上优秀80分以上良好60分以上及格否则不及格 -->
+<div [ngSwitch]="true" >
+  <p *ngSwitchCase="myscore>=90">优秀</p>
+  <p *ngSwitchCase="myscore>=80 && myscore<90">良好</p>
+  <p *ngSwitchCase="myscore>=60 && myscore<80">及格</p>
+  <p *ngSwitchDefault>不及格</p>
+</div>
+
+<!-- 事件绑定 -->
+<button (click)="handleClick()">clickMe</button>
+
+<!-- 属性 的绑定 [attri]="expression"-->
+<!-- http://lorempixel.com/400/200/ -->
+<img [src]="myimgurl" alt="">
+<br>
+<br>
+<a [href]="myurl">跳转</a>

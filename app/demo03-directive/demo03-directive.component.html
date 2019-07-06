@@ -1,0 +1,24 @@
+<p>
+  demo03-directive works!
+</p>
+<ul>
+  <li *ngFor="let item of myList;let myindex=index" >
+    {{item}}下标{{myindex}}
+  </li>
+</ul>
+
+<!-- 条件指令 -->
+<div *ngIf="islogin">
+  <h1>欢迎回来</h1>
+</div>
+
+<!-- 多重条件判断
+  switch(expression)
+-->
+<div [ngSwitch]=" myanse" >
+  <p *ngSwitchCase="'a'">A</p>
+  <p *ngSwitchCase="'b'">B</p>
+  <p *ngSwitchCase="'c'">C</p>
+  <p *ngSwitchCase="'d'">D</p>
+  <p *ngSwitchDefault>请输入正确的答案</p>
+</div>

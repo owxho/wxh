@@ -1,0 +1,23 @@
+<p>
+  demo08-pipe works!
+</p>
+<!-- 管道 
+  uppercase/lowercase负责大小写转换
+-->
+<p>{{'michael'| uppercase}}</p>
+<!-- slice 裁剪/截取 -->
+<p>{{"abcdefghigklmn"| slice:0:5}}...</p>
+<!-- currency 货币格式化 -->
+<p>{{30.56 | currency:'EUR'}}</p>
+<!-- number 控制数字小数点前后的位数 -->
+<p>{{3.1415926 | number:'3.2-2'}}</p>
+<!-- percent 百分比-->
+<p>{{0.3 | percent}}</p>
+<!-- json 在调试代码时将数据转换为json字符串 
+  json序列化:将数据转为字符串 JSON.stringify
+  json反序列化:将字符串转为对象或者数组 JSON.parse
+-->
+<p>{{mystu | json}}</p>
+<!-- 如何调用自定义的管道 -->
+<p>{{1 | order}}</p>
+<p>{{0 | sex:true}}</p>

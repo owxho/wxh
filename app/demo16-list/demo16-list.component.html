@@ -1,0 +1,7 @@
+<p>
+  demo16-list works!
+</p>
+<ul *ngFor="let item of lili;let myindex=index" >
+  <li [routerLink]="'/detail/'+myindex">{{item}}</li>
+  <!-- <li routerLink="/detail/{{myindex}}">{{item}}</li> -->
+</ul>
