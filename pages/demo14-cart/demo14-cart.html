@@ -1,0 +1,31 @@
+<!--
+  Generated template for the Demo14CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>demo14-cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- ionic处理表单 -->
+  <ion-list>
+    <ion-item>
+      <!-- stacked/floating -->
+      <ion-label stacked>用户名</ion-label>
+      <ion-input type="text" placeholder="请输入用户名"></ion-input>
+    </ion-item>
+    <ion-item>
+        <!-- stacked/floating -->
+        <ion-label stacked>密码</ion-label>
+        <ion-input type="password" placeholder="请输入用密码"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="danger" (click)="jump()" round block>提交</button>
+</ion-content>

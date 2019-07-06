@@ -1,0 +1,59 @@
+<!--
+  Generated template for the Demo06GridPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>demo06-grid</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<!-- 栅格基本用法 -->
+<ion-grid>
+  <ion-row>
+    <ion-col col-3 push-6>
+        <button ion-button block>btn1</button>
+    </ion-col>
+    <ion-col col-3 pull-3>
+        <button ion-button block>btn2</button>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row justify-content-center>
+    <ion-col col-3>
+        <button ion-button block>btn</button>
+    </ion-col>
+  </ion-row>
+  <ion-row align-items-end>
+    <ion-col>
+      <button ion-button block>大爷</button>
+    </ion-col>
+    <ion-col>
+        <button ion-button block>小爷</button>
+        <button ion-button block>小爷</button>
+        <button ion-button block>小爷</button>
+    </ion-col>
+    <ion-col>
+        <button ion-button block>中爷</button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3>
+          <button ion-button block>col1</button>
+      </ion-col>
+      <ion-col col-3 offset-2>
+          <button ion-button block>col2</button>
+      </ion-col>
+    </ion-row>
+    <ion-row></ion-row>
+  </ion-grid>
+</ion-content>

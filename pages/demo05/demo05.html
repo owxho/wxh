@@ -1,0 +1,34 @@
+<!--
+  Generated template for the Demo05Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>demo05</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- 下拉刷新 -->
+  <ion-refresher (ionRefresh)="shuaxin($event)">
+    <ion-refresher-content pullingText="下拉刷新" refreshingText="正在刷新">
+
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item *ngFor="let item of mylist" >
+      {{item}}
+    </ion-item>
+  </ion-list>
+  <!-- 上拉刷新 -->
+  <ion-infinite-scroll (ionInfinite)="shangla($event)">
+    <ion-infinite-scroll-content loadingText="正在加载更多">
+
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
