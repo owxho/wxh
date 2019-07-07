@@ -1,0 +1,33 @@
+/* pages/home/home.wxss */
+/* <!-- 一部电影的区域 --> */
+.movie{
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.movie-img{
+  width: 200rpx;
+  height: 300rpx;
+  margin-right: 20rpx;
+}
+.movie-info{
+  flex: 1;/*将右侧的区域分配info介绍*/
+  font-size: 28rpx;
+  line-height: 1.8;
+}
+.movie-title{
+  color: #666;
+  font-size: 40rpx;
+  font-weight: bolder;
+}
+.movie-score{
+  color: #faaf00;
+}
+.movie-comment{
+  width: 300rpx;
+  border-radius: 10rpx;
+  height: 60rpx;
+  background:#e54847;
+  font-size: 26rpx;
+  margin-top: 120rpx;
+}

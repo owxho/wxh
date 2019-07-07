@@ -1,0 +1,18 @@
+<!--pages/mymovie/mymovie.wxml-->
+<view class='movelist'>
+</view>
+<view class='upload'>
+  <!-- vant输入框 -->
+  <van-cell-group>
+  <van-field
+    value="{{content }}"
+    placeholder="写下你的想法"
+    bind:change="oncontentChange"
+  />
+</van-cell-group>
+  <!-- 按钮上传图片 -->
+  <image src='{{item}}' wx:for="{{image}}" wx:key="{{index}}"></image>
+  <van-button type="primary" size='large' bindtap='upload'>上传图片</van-button>
+  <!-- 提交按钮 -->
+   <van-button type="danger" size='large' bindtap='submit'>提交</van-button>
+</view>
