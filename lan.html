@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+    }
+    div>img{
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 100px;
+    }
+    @keyframes change{
+    0%{-webkit-transform:rotate(0deg);}
+		25%{-webkit-transform:rotate(90deg);}
+		50%{-webkit-transform:rotate(180deg);}
+		75%{-webkit-transform:rotate(270deg);}
+		100%{-webkit-transform:rotate(360deg);}
+    }
+  </style>
+</head>
+<body>
+ <div id="d1" onclick="bofang">
+   <img id="d2" src="img/757673746331053926.jpg" alt="">
+   <audio id="d3" src="img/MKJ-Time.flac"></audio>
+ </div>
+ <script>
+   var yin=document.getElementById("d1")
+   var yue=document.getElementById("d2")
+   var audio=document.getElementById("d3")
+   yin.onclick=function(){
+    if(audio.paused){
+      audio.play()
+      yue.style="animation:change 5s linear infinite; animation-play-state:running"
+    }else{
+      audio.pause();
+      yue.style="animation:change 5s linear infinite; animation-play-state:paused"
+    }
+   }
+ </script>
+</body>
+</html>
