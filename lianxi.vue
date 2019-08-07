@@ -1,29 +1,48 @@
 <template>
  <!-- 分页 -->
            <div class="foot">
-            <tr class="nav1" v-for="(item,index) of TableData" :key="index"></tr>
-                <el-pagination class="bord"
-                 background
-                 layout="prev, pager, next"
-                 :total="list.length" prev-text="上一页" next-text="下一页" :page-size="pageSize" 
-                 @current-change="handleCurrentChange"
-                 :current-page.sync="currentPage">
-                </el-pagination>  
+            <div v-for="(item, key) in items" v-show="key<num" :key="key">
+                 {{item}}
+            </div>
+            <span @click="showMore">{{txt}}</span>
            </div>
 </template>
 <script>
 export default {
     data(){
         return{
-            list:[],
-            currentPage:1,//当前页数
-            pageSize:3//每一页的个数
+          items: [
+            'a',
+            'b',
+            'c',
+            'd',
+            'e',
+            'f',
+            "g",
+            "h",
+            "i",
+            "g"
+          ],
+          isShow: true,
+          txt: '显示全部',
+          num: 3
         }
     },
-      computed:{
-        TableData(){
-            return this.list.slice((this.currentPage-1)*this.pageSize,this.currentPage*this.pageSize)||[];
-        } 
+     methods: {
+        showMore(){
+        //   console.log('1', this.isShow);
+        //   this.isShow = !this.isShow;
+        //   console.log('2', this.isShow);
+        //   this.num = this.isShow? 3: this.items.length;
+        //   this.txt = this.isShow?  '显示全部':'收起'
+        this.isShow = !this.isShow;
+        if(!this.isShow){
+            this.num=6
+        }else{
+            this.num=this.items.length
+            this.isShow=false
+        }
+        }
       }
 }
 </script>
