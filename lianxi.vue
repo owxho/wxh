@@ -1,54 +1,32 @@
 <template>
-  <!-- 视频 -->
-                <div class="bod2-1" @mouseenter="show" @mouseleave="down">
-                    <video id="p4" src="@/assets/images/video.mp4"></video>
-                    <img v-if="login"  @click="bb" src="@/assets/images/bofang.png" alt="">
-                    <img v-if="login1" @click="cc"  src="@/assets/images/zanting.png" alt="">
-                </div>
+ <!-- 分页 -->
+           <div class="foot">
+            <tr class="nav1" v-for="(item,index) of TableData" :key="index"></tr>
+                <el-pagination class="bord"
+                 background
+                 layout="prev, pager, next"
+                 :total="list.length" prev-text="上一页" next-text="下一页" :page-size="pageSize" 
+                 @current-change="handleCurrentChange"
+                 :current-page.sync="currentPage">
+                </el-pagination>  
+           </div>
 </template>
 <script>
- export default {
-    data() {
-      return {
-         login:true,
-         login1:false,
-      };
-    },
-    methods:{
-       // 视频播放
-        yin(index){
-        this.list[index].bindtop=!this.list[index].bindtop
-        },
-        bb(){
-            p4.play();
-            this.login=false;
-            this.login1=true;
-        },
-        cc(){
-            p4.pause();
-            this.login=true;
-            this.login1=false;
-        },
-        show(){
-            if(p4.paused){
-                this.login=true;
-                this.login1=false;
-            }else{
-               this.login=false;
-                this.login1=true; 
-            }
-        },
-        down(){
-          if(this.login==true||this.login1==true){
-              this.login=false;
-              this.login1=false;
-          }
+export default {
+    data(){
+        return{
+            list:[],
+            currentPage:1,//当前页数
+            pageSize:3//每一页的个数
         }
-    }
-  };
+    },
+      computed:{
+        TableData(){
+            return this.list.slice((this.currentPage-1)*this.pageSize,this.currentPage*this.pageSize)||[];
+        } 
+      }
+}
 </script>
 <style scoped>
- body {
-    margin: 0;
-  }
+
 </style>
